@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bahnhof</title>
-    <link rel="stylesheet" href="./assets/css/styles.css">
-    <link rel="stylesheet" href="./assets/css/dark-styles.css">
-    <link rel="stylesheet" href="./assets/css/line-colors.css">
-    <link rel="shortcut icon" type="image/x-icon" href="./assets/branding/favicon.ico">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/dark-styles.css">
+    <link rel="stylesheet" href="../assets/css/line-colors.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/branding/favicon.ico">
     <link rel="manifest" href="/manifest.json" type="application/json">
     <meta name="theme-color" content="#000">
     <meta name="robots" content="noindex">
@@ -22,7 +22,7 @@
 			<div class="tabs">
 				<a href="#" class="active">&nbsp;Bahnhof&nbsp;</a>
 			</div>
-            <div class="iconbar"><a class="navsearch" href="stationsearch.html">Bahnhofsuche</a></div>
+            <div class="iconbar"><a class="navsearch" href="../search/stationsearch.html">Bahnhofsuche</a></div>
 	</nav>
 
     <br>
@@ -31,7 +31,7 @@
 		<h1>&#128557;</h1>
 		<h3>Es ist ein Fehler aufgetreten.</h3>
 		<p>Bitte überprüfe ob diese Station durch <i>DB Infrago</i> betrieben wird.</p>
-		<p><a href="stationsearch.html"><u>Bahnhofsuche</u></a></p>
+		<p><a href="../search/stationsearch.html"><u>Bahnhofsuche</u></a></p>
 	</div>
 	
     <div id="container" class="tripcontainer">
@@ -123,21 +123,21 @@ fetch(`https://data.cuzimmartin.dev/fetch-station?eva=${stationID}`)
 	const topservicesTable = document.getElementById("topservicestable");
 	
 	if (data.hasWiFi === true) {
-		topservicesTable.innerHTML += "<td><img src=\"./assets/icons/hasWiFi.svg\" class=\"topserviceicon\"><td class=\"wide\">WiFi<br><span class=\"secondary\">Ja</span></td>";
+		topservicesTable.innerHTML += "<td><img src=\"../assets/icons/hasWiFi.svg\" class=\"topserviceicon\"><td class=\"wide\">WiFi<br><span class=\"secondary\">Ja</span></td>";
 	} else {
 		//topservicesTable.innerHTML += "<td><img src=\"./assets/icons/hasntWiFi.svg\" class=\"topserviceicon\"><td class=\"wide\">WiFi<br><span class=\"secondary\">Nein</span></td>";
 
 	}
 	
 	if (data.hasSteplessAccess === 'yes') {
-		topservicesTable.innerHTML += "<td><img src=\"./assets/icons/hasSteplessAccess.svg\" class=\"topserviceicon\"><td class=\"wide\">Stufenfrei<br><span class=\"secondary\">Ja</span></td>";
+		topservicesTable.innerHTML += "<td><img src=\"../assets/icons/hasSteplessAccess.svg\" class=\"topserviceicon\"><td class=\"wide\">Stufenfrei<br><span class=\"secondary\">Ja</span></td>";
 	
 	} else if (data.hasSteplessAccess === 'partial') {
 	
-		topservicesTable.innerHTML += "<td><img src=\"./assets/icons/partialSteplessAccess.svg\" class=\"topserviceicon\"><td class=\"wide\">Stufenfrei<br><span class=\"secondary\">Teilweise</span></td>";
+		topservicesTable.innerHTML += "<td><img src=\"../assets/icons/partialSteplessAccess.svg\" class=\"topserviceicon\"><td class=\"wide\">Stufenfrei<br><span class=\"secondary\">Teilweise</span></td>";
 
 	} else {
-		topservicesTable.innerHTML += "<td><img src=\"./assets/icons/hasntSteplessAccess.svg\" class=\"topserviceicon\"><td class=\"wide\">Stufenfrei<br><span class=\"secondary\">Nein</span></td>";
+		topservicesTable.innerHTML += "<td><img src=\"../assets/icons/hasntSteplessAccess.svg\" class=\"topserviceicon\"><td class=\"wide\">Stufenfrei<br><span class=\"secondary\">Nein</span></td>";
 
 	}
 	
@@ -147,23 +147,23 @@ fetch(`https://data.cuzimmartin.dev/fetch-station?eva=${stationID}`)
 	const servicesTable = document.getElementById("servicestable");
 	
 	if (data.hasParking === true) {
-		servicesTable.innerHTML += "<tr><td><img src=\"./assets/icons/hasParking.svg\" class=\"serviceicon\"><td class=\"wide\">Parkplatz</td><td><span class=\"secondary\">Ja</span></td></tr>";
+		servicesTable.innerHTML += "<tr><td><img src=\"../assets/icons/hasParking.svg\" class=\"serviceicon\"><td class=\"wide\">Parkplatz</td><td><span class=\"secondary\">Ja</span></td></tr>";
 	}
 	
 	if (data.hasBicycleParking === true) {
-		servicesTable.innerHTML += "<tr><td><img src=\"./assets/icons/hasBicycleParking.svg\" class=\"serviceicon\"><td class=\"wide\">Radparken</td><td><span class=\"secondary\">Ja</span></td></tr>";
+		servicesTable.innerHTML += "<tr><td><img src=\"../assets/icons/hasBicycleParking.svg\" class=\"serviceicon\"><td class=\"wide\">Radparken</td><td><span class=\"secondary\">Ja</span></td></tr>";
 	}
 	
 	if (data.hasPublicFacilities === true) {
-		servicesTable.innerHTML += "<tr><td><img src=\"./assets/icons/hasPublicFacilities.svg\" class=\"serviceicon\"><td class=\"wide\">Öffentliches WC</td><td><span class=\"secondary\">Ja</span></td></tr>";
+		servicesTable.innerHTML += "<tr><td><img src=\"../assets/icons/hasPublicFacilities.svg\" class=\"serviceicon\"><td class=\"wide\">Öffentliches WC</td><td><span class=\"secondary\">Ja</span></td></tr>";
 	}
 	
 	if (data.hasLockerSystem === true) {
-		servicesTable.innerHTML += "<tr><td><img src=\"./assets/icons/hasLockerSystem.svg\" class=\"serviceicon\"><td class=\"wide\">Schließfächer</td><td><span class=\"secondary\">Ja</span></td></tr>";
+		servicesTable.innerHTML += "<tr><td><img src=\"../assets/icons/hasLockerSystem.svg\" class=\"serviceicon\"><td class=\"wide\">Schließfächer</td><td><span class=\"secondary\">Ja</span></td></tr>";
 	}
 	
 	if (data.hasTaxiRank === true) {
-		servicesTable.innerHTML += "<tr><td><img src=\"./assets/icons/hasTaxiRank.svg\" class=\"serviceicon\"><td class=\"wide\">Taxistand</td><td><span class=\"secondary\">Ja</span></td></tr>";
+		servicesTable.innerHTML += "<tr><td><img src=\"../assets/icons/hasTaxiRank.svg\" class=\"serviceicon\"><td class=\"wide\">Taxistand</td><td><span class=\"secondary\">Ja</span></td></tr>";
 	}
 		
 	//FACILITIES
@@ -188,9 +188,9 @@ fetch(`https://data.cuzimmartin.dev/fetch-station?eva=${stationID}`)
 	console.log('Active: '+  facilityActiveCounter)
 	
 	if (facilityActiveCounter === 1) {
-		facilitiesstatusTable.innerHTML += "<tr><td><img src=\"./assets/icons/facilityActive.svg\" class=\"serviceicon\"></td><td class=\"wide\">" + facilityActiveCounter + " Anlage in Betrieb</tr>";
+		facilitiesstatusTable.innerHTML += "<tr><td><img src=\"../assets/icons/facilityActive.svg\" class=\"serviceicon\"></td><td class=\"wide\">" + facilityActiveCounter + " Anlage in Betrieb</tr>";
 	} else {
-		facilitiesstatusTable.innerHTML += "<tr><td><img src=\"./assets/icons/facilityActive.svg\" class=\"serviceicon\"></td><td class=\"wide\">" + facilityActiveCounter + " Anlagen in Betrieb</tr>";
+		facilitiesstatusTable.innerHTML += "<tr><td><img src=\"../assets/icons/facilityActive.svg\" class=\"serviceicon\"></td><td class=\"wide\">" + facilityActiveCounter + " Anlagen in Betrieb</tr>";
 	}
 	
 	
@@ -203,27 +203,27 @@ fetch(`https://data.cuzimmartin.dev/fetch-station?eva=${stationID}`)
 	const additionalservicestable = document.getElementById("additionalservicestable");
 	
 	if (data.hasTravelCenter === true) {
-		document.getElementById("additionalservicestable").innerHTML += "<tr><td><img src=\"./assets/icons/hasTravelcenter.svg\" class=\"serviceicon\"><td class=\"wide\">Reisezentrum</td><td><span class=\"secondary\">Ja</span></td></tr>";
+		document.getElementById("additionalservicestable").innerHTML += "<tr><td><img src=\"../assets/icons/hasTravelcenter.svg\" class=\"serviceicon\"><td class=\"wide\">Reisezentrum</td><td><span class=\"secondary\">Ja</span></td></tr>";
 	}
 	
 	if ("DBinformation" in data) {
-		document.getElementById("additionalservicestable").innerHTML += "<tr><td><img src=\"./assets/icons/dbinformation.svg\" class=\"serviceicon\"><td class=\"wide\">DB Information</td><td><span class=\"secondary\">Ja</span></td></tr>";
+		document.getElementById("additionalservicestable").innerHTML += "<tr><td><img src=\"../assets/icons/dbinformation.svg\" class=\"serviceicon\"><td class=\"wide\">DB Information</td><td><span class=\"secondary\">Ja</span></td></tr>";
 	}
 		
 	if (data.hasDBLounge === true) {
-		document.getElementById("additionalservicestable").innerHTML += "<tr><td><img src=\"./assets/icons/hasDBLounge.svg\" class=\"serviceicon\"><td class=\"wide\">DB Lounge</td><td><span class=\"secondary\">Ja</span></td></tr>";
+		document.getElementById("additionalservicestable").innerHTML += "<tr><td><img src=\"../assets/icons/hasDBLounge.svg\" class=\"serviceicon\"><td class=\"wide\">DB Lounge</td><td><span class=\"secondary\">Ja</span></td></tr>";
 	}
 	
 	if (data.hasLostAndFound === true) {
-		document.getElementById("additionalservicestable").innerHTML += "<tr><td><img src=\"./assets/icons/hasLostAndFound.svg\" class=\"serviceicon\"><td class=\"wide\">Fundbüro</td><td><span class=\"secondary\">Ja</span></td></tr>";
+		document.getElementById("additionalservicestable").innerHTML += "<tr><td><img src=\"../assets/icons/hasLostAndFound.svg\" class=\"serviceicon\"><td class=\"wide\">Fundbüro</td><td><span class=\"secondary\">Ja</span></td></tr>";
 	}
 	
 	if (data.hasRailwayMission === true) {
-		document.getElementById("additionalservicestable").innerHTML += "<tr><td><img src=\"./assets/icons/hasRailwayMission.svg\" class=\"serviceicon\"><td class=\"wide\">Bahnhofsmission</td><td><span class=\"secondary\">Ja</span></td></tr>";
+		document.getElementById("additionalservicestable").innerHTML += "<tr><td><img src=\"../assets/icons/hasRailwayMission.svg\" class=\"serviceicon\"><td class=\"wide\">Bahnhofsmission</td><td><span class=\"secondary\">Ja</span></td></tr>";
 	}
 		
 	if (data.hasCarRental === true) {
-		document.getElementById("additionalservicestable").innerHTML += "<tr><td><img src=\"./assets/icons/hasCarRental.svg\" class=\"serviceicon\"><td class=\"wide\">Mietwagenverleih</td><td><span class=\"secondary\">Ja</span></td></tr>";
+		document.getElementById("additionalservicestable").innerHTML += "<tr><td><img src=\"../assets/icons/hasCarRental.svg\" class=\"serviceicon\"><td class=\"wide\">Mietwagenverleih</td><td><span class=\"secondary\">Ja</span></td></tr>";
 	}
 	
 	
@@ -234,9 +234,9 @@ fetch(`https://data.cuzimmartin.dev/fetch-station?eva=${stationID}`)
 	.then(weatherdata => {
 
 		if (weatherdata?.alerts?.[0]?.properties?.EVENT != null) {
-			document.getElementById('weather').innerHTML = "<a href=\"weather.html?city=" + data.mailingAddress.city + "\"><div class=\"button\">" + Math.floor(weatherdata.main.temp) + "°C " + weatherdata.weather[0].description +"<br><div class=\"weatherwarning\">📢 " + weatherdata?.alerts?.[0]?.properties?.EVENT?.replace("VORABINFORMATION", "") + "</div></div></a>";	  
+			document.getElementById('weather').innerHTML = "<a href=" + data.mailingAddress.city + "\"weather.html?city=\"><div class=\"button\">" + Math.floor(weatherdata.main.temp) + "°C " + weatherdata.weather[0].description +"<br><div class=\"weatherwarning\">📢 " + weatherdata?.alerts?.[0]?.properties?.EVENT?.replace("VORABINFORMATION", "") + "</div></div></a>";
 		} else {
-			document.getElementById('weather').innerHTML = "<a href=\"weather.html?city=" + data.mailingAddress.city + "\"><div class=\"button\">" + Math.floor(weatherdata.main.temp) + "°C " + weatherdata.weather[0].description +"<br></div></a>";	  
+			document.getElementById('weather').innerHTML = "<a href=" + data.mailingAddress.city + "\"weather.html?city=\"><div class=\"button\">" + Math.floor(weatherdata.main.temp) + "°C " + weatherdata.weather[0].description +"<br></div></a>";
 		}
 
 	})
