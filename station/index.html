@@ -175,7 +175,7 @@ fetch(`https://data.cuzimmartin.dev/fetch-station?eva=${stationID}`)
 	
 	data.facilities.forEach(facility => {
 		if (facility.state === 'INACTIVE') {
-			facilitiesstatusTable.innerHTML += "<tr><td><img src=\"./assets/icons/"+ facility.type +".svg\" class=\"serviceicon\"></td><td class=\"wide\">" + (facility.type === "ESCALATOR" ? "Fahrtreppe" : (facility.type === "ELEVATOR" ? "Aufzug" : facility.type)) + " " + facility.description + "</tr>";
+			facilitiesstatusTable.innerHTML += "<tr><td><img src=\"../assets/icons/"+ facility.type +".svg\" class=\"serviceicon\"></td><td class=\"wide\">" + (facility.type === "ESCALATOR" ? "Fahrtreppe" : (facility.type === "ELEVATOR" ? "Aufzug" : facility.type)) + " " + facility.description + "</tr>";
  			++facilityInactiveCounter;
 		} else {
 			++facilityActiveCounter;
@@ -234,10 +234,11 @@ fetch(`https://data.cuzimmartin.dev/fetch-station?eva=${stationID}`)
 	.then(weatherdata => {
 
 		if (weatherdata?.alerts?.[0]?.properties?.EVENT != null) {
-			document.getElementById('weather').innerHTML = "<a href=" + data.mailingAddress.city + "\"weather.html?city=\"><div class=\"button\">" + Math.floor(weatherdata.main.temp) + "°C " + weatherdata.weather[0].description +"<br><div class=\"weatherwarning\">📢 " + weatherdata?.alerts?.[0]?.properties?.EVENT?.replace("VORABINFORMATION", "") + "</div></div></a>";
+			document.getElementById('weather').innerHTML = "<a href=\"weather.html?city=" + encodeURIComponent(data.mailingAddress.city) + "\"><div class=\"button\">" + Math.floor(weatherdata.main.temp) + "°C " + weatherdata.weather[0].description + "<br><div class=\"weatherwarning\">📢 " + weatherdata?.alerts?.[0]?.properties?.EVENT?.replace("VORABINFORMATION", "") + "</div></div></a>";
 		} else {
-			document.getElementById('weather').innerHTML = "<a href=" + data.mailingAddress.city + "\"weather.html?city=\"><div class=\"button\">" + Math.floor(weatherdata.main.temp) + "°C " + weatherdata.weather[0].description +"<br></div></a>";
+			document.getElementById('weather').innerHTML = "<a href=\"weather.html?city=" + encodeURIComponent(data.mailingAddress.city) + "\"><div class=\"button\">" + Math.floor(weatherdata.main.temp) + "°C " + weatherdata.weather[0].description + "<br></div></a>";
 		}
+
 
 	})
 

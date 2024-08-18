@@ -55,7 +55,7 @@ var city = urlParams.get('city');
 		
 		document.getElementById('city').innerHTML =  weatherdata.name;	
 		
-		document.getElementById('weatherheader').innerHTML =  "<span class=\"big\">" + Math.floor(weatherdata.main.temp) + "°C</span> <img src=\"./assets/weatcherIcons/" + weatherdata.weather[0].icon + ".svg\" class=\"megaicon noinvert\">";
+		document.getElementById('weatherheader').innerHTML =  "<span class=\"big\">" + Math.floor(weatherdata.main.temp) + "°C</span> <img src=\"../assets/weatcherIcons/" + weatherdata.weather[0].icon + ".svg\" class=\"megaicon noinvert\">";
 		
 		document.getElementById('feelsLike').innerHTML =  "Gefühlt wie: " + Math.floor(weatherdata.main.feels_like) + "°C";	  
 
@@ -69,10 +69,10 @@ var city = urlParams.get('city');
 
 		document.getElementById('wind').innerHTML =  "&#128168; Wind: " + Math.floor(weatherdata.wind.speed) + " km/h / "+ weatherdata.wind.deg + "°";	  
 
-		document.getElementById('clouds').innerHTML =  "&#x2601; &nbsp;Bewölkung: " + weatherdata.clouds.all + " %";	  
+		document.getElementById('clouds').innerHTML =  "&#x2601; &nbsp;Bewölkung: " + weatherdata.clouds.all + " %";
 
 		if (weatherdata?.alerts?.[0]?.properties?.EVENT != null) {
-			document.getElementById('warnings').innerHTML = "<div class=\"weatherwarning\"><small class=\"secondary\">📢 Wetterwarnung</small><br><b>" + weatherdata.alerts[0].properties?.EVENT + "</b><br><small>" + weatherdata.alerts[0].properties?.DESCRIPTION + "<hr><b>Herausgeber:</b> " + weatherdata.alerts[0].properties?.CONTACT + "</small></div>";	  
+			document.getElementById('warnings').innerHTML = "<div class=\"weatherwarning\"><small class=\"secondary\">📢 Wetterwarnung</small><br><b>" + weatherdata.alerts[0].properties?.EVENT + "</b><br><small>" + weatherdata.alerts[0].properties?.DESCRIPTION + "<hr><b>Herausgeber:</b> " + weatherdata.alerts[0].properties?.CONTACT + "</small></div>";
 		}
 	})
 </script>

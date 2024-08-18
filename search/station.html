@@ -86,12 +86,12 @@
 
 				// Create an anchor element with a link based on the selected search type (departure or arrival)
 				const link = document.createElement('a');
-				link.href = `station.html?station=${entry.id}`;
+				link.href = `../station/?station=${entry.id}`;
 
 				// If suburban is true, append an image to the link with class "bigicon"
 				if (isSuburban) {
 					const img = document.createElement('img');
-					img.src = './assets/icons/sbahn.svg';
+					img.src = '../assets/icons/sbahn.svg';
 					img.alt = 'Suburban Icon';
 					img.classList.add('bigicon');
 					img.classList.add('inverted');
@@ -100,7 +100,7 @@
 				
 				if (isRegional) {
 					const img = document.createElement('img');
-					img.src = './assets/icons/rail.svg';
+					img.src = '../assets/icons/rail.svg';
 					img.alt = 'Rail Icon';
 					img.classList.add('bigicon');
 					img.classList.add('inverted');
